@@ -3,51 +3,32 @@
     <el-menu
       :default-active="defaultActive"
       class="el-menu-vertical-demo"
+      :style="{ height: screenHeight + 'px' }"
       @open="handleOpen"
-      @close="handleClose">
-      <el-submenu v-for="(item, index) in menuList" :key="index" :index="item.id">
+      @close="handleClose"
+    >
+      <submenu v-for="(item, index) in menuList" :key="index" :menu="item" />
+      <!-- <el-submenu v-for="(item, index) in menuList" :key="index" :index="item.id" :class="[item.hasOwnProperty('children') ? 'submenu-show' : 'submenu-hidden']">
         <template slot="title">
-          <i :class="item.icon"></i>
-          <span>{{ item.title }}</span>
+          <i :class="item.icon" />
+          <span :title="item.title">{{ item.title }}</span>
         </template>
-      </el-submenu>
-      <!-- <el-submenu index="1">
-        <template slot="title">
-          <i class="el-icon-location"></i>
-          <span>导航一</span>
+        <template v-for="menu in item.children">
         </template>
-        <el-menu-item-group>
-          <template slot="title">分组一</template>
-          <el-menu-item index="1-1">选项1</el-menu-item>
-          <el-menu-item index="1-2">选项2</el-menu-item>
-        </el-menu-item-group>
-        <el-menu-item-group title="分组2">
-          <el-menu-item index="1-3">选项3</el-menu-item>
-        </el-menu-item-group>
-        <el-submenu index="1-4">
-          <template slot="title">选项4</template>
-          <el-menu-item index="1-4-1">选项1</el-menu-item>
-        </el-submenu>
-      </el-submenu>
-      <el-menu-item index="2">
-        <i class="el-icon-menu"></i>
-        <span slot="title">导航二</span>
-      </el-menu-item>
-      <el-menu-item index="3" disabled>
-        <i class="el-icon-document"></i>
-        <span slot="title">导航三</span>
-      </el-menu-item>
-      <el-menu-item index="4">
-        <i class="el-icon-setting"></i>
-        <span slot="title">导航四</span>
-      </el-menu-item> -->
+      </el-submenu> -->
     </el-menu>
   </div>
 </template>
 
 <script>
+import { mixins } from '@/mixins'
 import { getLeftNavigation } from '@/service/mockData'
+import submenu from './submenu'
 export default {
+  components: {
+    submenu
+  },
+  mixins: [mixins],
   data () {
     return {
       defaultActive: "0",
@@ -56,6 +37,24 @@ export default {
           id: '1',
           title: '首页',
           icon: 'el-icon-star-on'
+        }, {
+          id: '2',
+          title: '测试',
+          icon: 'el-icon-star-on',
+          children: [
+            {
+              id: '2-3',
+              title: '测试2',
+              icon: 'el-icon-star-on',
+              children: [
+                {
+                  id: '2-3-1',
+                  title: '测试3',
+                  icon: 'el-icon-star-on'
+                }
+              ]
+            }
+          ]
         }
       ]
     }
@@ -66,22 +65,36 @@ export default {
   },
 
   methods: {
-    handleOpen(key, keyPath) {
+    handleOpen (key, keyPath) {
       console.log(key, keyPath);
     },
-    handleClose(key, keyPath) {
+    handleClose (key, keyPath) {
       console.log(key, keyPath);
     },
     async getLeftNavigation () {
       const param = {}
       const res = await getLeftNavigation(param)
       console.log(res)
+    },
+    menuClick () {
+
     }
   }
 }
 </script>
 
-<style lang="sass">
-
+<style lang="scss">
+.aside{
+  .submenu-show{
+    .el-submenu__icon-arrow{
+      display: block;
+    }
+  }
+  .submenu-hidden{
+    .el-submenu__icon-arrow{
+      display: none;
+    }
+  }
+}
 </style>
 

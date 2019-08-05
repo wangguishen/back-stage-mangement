@@ -1,18 +1,35 @@
 import * as types from '../types.js'
 
+const clientWidth = document.documentElement.clientWidth
+const clientHeight = document.documentElement.clientHeight
+
 const state = {
-  ceshi: 'ddddddddddd'
+  ceshi: 'ddddddddddd',
+  screenWidth: clientWidth, // 屏幕的宽度
+  screenHeight: clientHeight // 屏幕的高度
 }
 
 const actions = {
   setCeshi ({ commit }, boo) {
     commit(types.SET_CESHI, boo)
+  },
+  setScreenWidth ({ commit }, boo) {
+    commit(types.SET_SCREEN_WIDTH, boo)
+  },
+  setScreenHeight ({ commit }, boo) {
+    commit(types.SET_SCREEN_HEIGHT, boo)
   }
 }
 
 const mutations = {
   'SET_CESHI' (state, boo) {
     state.ceshi = boo
+  },
+  'SET_SCREEN_WIDTH' (state, boo) {
+    state.screenWidth = boo
+  },
+  'SET_SCREEN_HEIGHT' (state, boo) {
+    state.screenHeight = boo
   }
 }
 
