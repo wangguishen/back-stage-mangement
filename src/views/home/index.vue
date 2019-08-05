@@ -5,7 +5,9 @@
     </el-aside>
     <el-container>
       <el-header>Header</el-header>
-      <el-main />
+      <el-main>
+        123132
+      </el-main>
     </el-container>
   </el-container>
 </template>
