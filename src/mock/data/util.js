@@ -1,3 +1,4 @@
+import { getAllIcon } from '@/utils/icon'
 import {
   Random
 } from 'mockjs';
@@ -8,6 +9,7 @@ const asideList = [];
 for (let i = 0; i < 20; i++) {
   asideList.push({
     id: Random.guid(),
+    icon: getAllIcon(),
     or: '深圳深南大道营业部',
     mobile: '13612547852',
     date: Random.date(),
