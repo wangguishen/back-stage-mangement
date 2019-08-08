@@ -11,26 +11,37 @@ const routes = [
     component: () => import('@/views/home/index.vue'),
     children: [
       {
-        path: '/home',
+        path: '/',
         name: 'home',
-        component: () => import('@/views/home/index.vue')
+        component: () => import('@/views/home/home.vue'),
+        meta: {
+          title: '首页'
+        }
+      }, {
+        path: '/live/zjls',
+        name: 'zjls',
+        component: () => import('@/views/live/zjls.vue'),
+        meta: {
+          title: '资金流水'
+        }
       }
     ]
   },
   {
-    path: '/about',
-    name: 'about',
-    component: () => import('@/views/About.vue')
-  },
-  {
     path: '/404',
     name: 'err404',
-    component: () => import('@/views/err/404.vue')
+    component: () => import('@/views/err/404.vue'),
+    meta: {
+      title: '404'
+    }
   },
   {
     path: '/50X',
     name: 'err50X',
-    component: () => import('@/views/err/50X.vue')
+    component: () => import('@/views/err/50X.vue'),
+    meta: {
+      title: '50X'
+    }
   },
   {
     path: '*',

@@ -1,12 +1,18 @@
 <template>
   <el-container class="home-index">
-    <el-aside width="200px">
+    <el-aside class="my-aside" :width="isCollapse ? '64px' : '200px'">
       <my-aside />
     </el-aside>
     <el-container>
-      <el-header>Header</el-header>
+      <el-header>
+        <my-header />
+      </el-header>
       <el-main>
-        123132
+        <transition name="fade" mode="out-in">
+          <!-- <keep-alive :include="cachedViews"> -->
+            <router-view />
+          <!-- </keep-alive> -->
+        </transition>
       </el-main>
     </el-container>
   </el-container>
@@ -14,14 +20,15 @@
 
 <script>
 import myAside from '@/components/home/aside'
+import myHeader from '@/components/home/header'
 export default {
   components: {
-    myAside
+    myAside, myHeader
   },
   computed: {
-    ceshi () {
-      return this.$store.getters.getCeshi
-    }
+    isCollapse () {
+      return this.$store.getters.getIsCollapse
+    },
   }
 }
 </script>
@@ -30,6 +37,10 @@ export default {
   .home-index{
     width: 100%;
     height: 100vh;
+    // .my-aside{
+    //   transition: width .3s;
+    //   -webkit-transition: width .3s;
+    // }
   }
 </style>
 

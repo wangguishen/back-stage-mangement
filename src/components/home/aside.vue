@@ -2,20 +2,14 @@
   <div class="aside">
     <el-menu
       :default-active="defaultActive"
-      class="el-menu-vertical-demo"
+      class="menu-aside"
+      router
       :style="{ height: screenHeight + 'px' }"
+      :collapse="isCollapse"
       @open="handleOpen"
       @close="handleClose"
     >
       <submenu v-for="(item, index) in menuList" :key="index" :menu="item" />
-      <!-- <el-submenu v-for="(item, index) in menuList" :key="index" :index="item.id" :class="[item.hasOwnProperty('children') ? 'submenu-show' : 'submenu-hidden']">
-        <template slot="title">
-          <i :class="item.icon" />
-          <span :title="item.title">{{ item.title }}</span>
-        </template>
-        <template v-for="menu in item.children">
-        </template>
-      </el-submenu> -->
     </el-menu>
   </div>
 </template>
@@ -60,6 +54,12 @@ export default {
     }
   },
 
+  computed: {
+    isCollapse () {
+      return this.$store.getters.getIsCollapse
+    }
+  },
+
   mounted () {
     this.getLeftNavigation()
   },
@@ -74,6 +74,7 @@ export default {
     async getLeftNavigation () {
       const param = {}
       const res = await getLeftNavigation(param)
+      this.menuList = res.data.data
       console.log(res)
     },
     menuClick () {
@@ -85,15 +86,8 @@ export default {
 
 <style lang="scss">
 .aside{
-  .submenu-show{
-    .el-submenu__icon-arrow{
-      display: block;
-    }
-  }
-  .submenu-hidden{
-    .el-submenu__icon-arrow{
-      display: none;
-    }
+  .menu-aside{
+    border: none;
   }
 }
 </style>

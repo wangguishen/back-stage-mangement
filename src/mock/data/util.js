@@ -1,25 +1,38 @@
-import { getAllIcon } from '@/utils/icon'
-import {
-  Random
-} from 'mockjs';
+// import { getAllIcon } from '@/utils/icon'
+import Mock from 'mockjs';
+const Random = Mock.Random;
 
-const asideList = [];
+// const leftList = ['']
+
+const asideList = [
+  Mock.mock({
+    id: Random.increment().toString(),
+    title: '首页',
+    icon: "el-icon-star-on",
+    path: '/'
+  }), Mock.mock({
+    id: Random.increment().toString(),
+    title: '生活',
+    icon: "el-icon-s-goods",
+    children: [
+      Mock.mock({
+        id: Random.increment().toString(),
+        title: '资金流水',
+        icon: "el-icon-s-ticket",
+        path: '/live/zjls'
+      })
+    ]
+  })
+];
 
 // 左侧栏数据
-for (let i = 0; i < 20; i++) {
-  asideList.push({
-    id: Random.guid(),
-    icon: getAllIcon(),
-    or: '深圳深南大道营业部',
-    mobile: '13612547852',
-    date: Random.date(),
-    name: Random.cname(),
-    card: '431103122215554851',
-    sex: Random.integer(0, 1),
-    customerNumber: '123456',
-    channel: '渠道'
-  })
-}
+// for (let i = 0; i < 5; i++) {
+//   asideList.push(Mock.mock({
+//     id: Random.guid(),
+//     "icon|1": getAllIcon(),
+//     "title|1": Random.cname()
+//   }))
+// }
 
 export {
   asideList

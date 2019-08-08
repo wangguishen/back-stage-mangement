@@ -142,9 +142,9 @@ module.exports = {
     loaderOptions: {
       sass: {
         // @是src的别名
-        // data: `
-        //   @import "@/style/base/_color.scss";
-        //   @import "@/style/base/_font.scss";`
+        data: `
+          @import "@/style/base/_color.scss";
+          @import "@/style/base/_font.scss";`
       }
       // postcss: {
       //   plugins: [

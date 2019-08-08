@@ -1,0 +1,22 @@
+// 头部
+.el-header{
+  display: flex;
+  align-items: center;
+  background: $blue;
+}
+
+// 左侧side
+.el-submenu__title:hover{
+  background: $cff;
+  color: $blue;
+  i{
+    color: $blue;
+  }
+}
+.el-menu-item:hover, .el-menu-item:focus{
+  background: $cff;
+  color: $blue;
+  i{
+    color: $blue;
+  }
+}
