@@ -5,6 +5,11 @@
   background: $blue;
 }
 
+// 主内容
+.el-main{
+  padding: 0;
+}
+
 // 左侧side
 .el-submenu__title:hover{
   background: $cff;

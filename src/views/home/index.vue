@@ -8,6 +8,9 @@
         <my-header />
       </el-header>
       <el-main>
+        <div>
+          <my-crumbs />
+        </div>
         <transition name="fade" mode="out-in">
           <!-- <keep-alive :include="cachedViews"> -->
             <router-view />
@@ -21,9 +24,15 @@
 <script>
 import myAside from '@/components/home/aside'
 import myHeader from '@/components/home/header'
+import myCrumbs from '@/components/crumbs/index'
 export default {
   components: {
-    myAside, myHeader
+    myAside, myHeader, myCrumbs
+  },
+  data () {
+    return {
+      
+    }
   },
   computed: {
     isCollapse () {
