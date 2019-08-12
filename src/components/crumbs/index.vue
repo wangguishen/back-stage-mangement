@@ -1,23 +1,25 @@
 <template>
   <div class="crumbs">
     <div
-      v-for="(item, index) in list"
+      v-for="(item, index) in crumbsList"
       :key="index"
       class="crumbs_box"
-      :class="[index === crumbsNum ? 'is-active' : '']"
+      :class="[index === Number(crumbsNum) ? 'is-active' : '']"
+      @click="changeCrumbs(item, index)"
     >
-      <span> {{ item }}</span>
+      <span> {{ item.name }}</span>
       <i class="el-icon-close" />
     </div>
   </div>
 </template>
 
 <script>
+import { mixins } from '@/mixins'
 export default {
+  mixins: [mixins],
   data () {
     return {
-      crumbsNum: 2,
-      list: ['1aaaaaaaaaaaaaaaaa', '1', '1', '1', '1', '1', '1']
+      
     }
   },
 
@@ -26,7 +28,10 @@ export default {
   },
 
   methods: {
-
+    changeCrumbs (item, index) {
+      this.$store.dispatch('setCrumbsNum', index)
+      
+    }
   }
 }
 </script>
@@ -45,9 +50,13 @@ export default {
       line-height: 32px;
       text-align: center;
       background: $cff;
+      font-size: 14px;
       padding: 0 10px;
       box-sizing: border-box;
       cursor: pointer;
+      span{
+        margin-right: 10px;
+      }
     }
     .is-active{
       color: red;

@@ -23,8 +23,10 @@
 </template>
 
 <script>
+import { mixins } from '@/mixins'
 export default {
   name: 'submenu',
+  mixins: [mixins],
   props: ['menu'],
   data () {
     return {
@@ -44,7 +46,28 @@ export default {
 
   methods: {
     menuClick (menu) {
-
+      const self = this;
+      let crumbsList = self.$store.getters.getCrumbsList
+      let crumbs = {
+        path: menu.path,
+        name: menu.title
+      }
+      let result = crumbsList.some(item => {
+        if (item.path === crumbs.path) {
+          return true 
+        } 
+      })
+      if (!result) { // 如果不存在
+        crumbsList.push(crumbs)
+        self.$store.dispatch('setCrumbsList', crumbsList)
+        self.$store.dispatch('setCrumbsNum', crumbsList.length - 1)
+      } else {
+        crumbsList.forEach((item, index) => {
+          if (item.path === crumbs.path) {
+            self.$store.dispatch('setCrumbsNum', index)
+          }
+        })
+      }
     }
   }
 }

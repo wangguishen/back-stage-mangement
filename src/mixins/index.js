@@ -24,6 +24,12 @@ export const mixins = {
     },
     screenHeight () {
       return this.$store.getters.getScreenHeight
+    },
+    crumbsNum () {
+      return this.$store.getters.getCrumbsNum
+    },
+    crumbsList () {
+      return this.$store.getters.getCrumbsList
     }
   },
   methods: {

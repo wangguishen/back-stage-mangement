@@ -2,12 +2,15 @@
 
 // 屏幕宽度
 export const SET_SCREEN_WIDTH = "SET_SCREEN_WIDTH"
-export const GET_SCREEN_WIDTH = "GET_SCREEN_WIDTH"
 
 // 屏幕高度
 export const SET_SCREEN_HEIGHT = "SET_SCREEN_HEIGHT"
-export const GET_SCREEN_HEIGHT = "GET_SCREEN_HEIGHT"
 
 // 左侧导航菜单是否显示
 export const SET_IS_COLLAPSE = "SET_IS_COLLAPSE"
-export const GET_IS_COLLAPSE = "GET_IS_COLLAPSE"
+
+// 头部导航位置
+export const SET_CRUMBS_NUM = "SET_CRUMBS_NUM"
+
+// 头部导航列表
+export const SET_CRUMBS_LIST = "SET_CRUMBS_LIST"
