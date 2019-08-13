@@ -11,11 +11,19 @@
         <div>
           <my-crumbs />
         </div>
-        <transition name="fade" mode="out-in">
-          <!-- <keep-alive :include="cachedViews"> -->
-            <router-view />
-          <!-- </keep-alive> -->
-        </transition>
+        <!-- width: isCollapse ? screenWidth - '64' + 'px' : screenWidth - '200' + 'px', -->
+        <div
+          class="main-box"
+          :style="{
+            height: screenHeight - '60' - '32' + 'px'
+          }"
+        >
+          <transition name="fade" mode="out-in">
+            <!-- <keep-alive :include="cachedViews"> -->
+              <router-view />
+            <!-- </keep-alive> -->
+          </transition>
+        </div>
       </el-main>
     </el-container>
   </el-container>
@@ -25,10 +33,12 @@
 import myAside from '@/components/home/aside'
 import myHeader from '@/components/home/header'
 import myCrumbs from '@/components/crumbs/index'
+import { mixins } from '@/mixins'
 export default {
   components: {
     myAside, myHeader, myCrumbs
   },
+  mixins: [mixins],
   data () {
     return {
       
@@ -50,6 +60,14 @@ export default {
     //   transition: width .3s;
     //   -webkit-transition: width .3s;
     // }
+    .main-box{
+      padding: 20px;
+      box-sizing: border-box;
+      div{
+        width: 100%;
+        height: 100%;
+      }
+    }
   }
 </style>
 

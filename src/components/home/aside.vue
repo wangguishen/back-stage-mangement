@@ -1,7 +1,8 @@
 <template>
   <div class="aside">
     <el-menu
-      :default-active="defaultActive"
+      :default-active="crumbsNum"
+      unique-opened
       class="menu-aside"
       router
       :style="{ height: screenHeight + 'px' }"
@@ -25,32 +26,8 @@ export default {
   mixins: [mixins],
   data () {
     return {
-      defaultActive: "0",
-      menuList: [
-        {
-          id: '1',
-          title: '首页',
-          icon: 'el-icon-star-on'
-        }, {
-          id: '2',
-          title: '测试',
-          icon: 'el-icon-star-on',
-          children: [
-            {
-              id: '2-3',
-              title: '测试2',
-              icon: 'el-icon-star-on',
-              children: [
-                {
-                  id: '2-3-1',
-                  title: '测试3',
-                  icon: 'el-icon-star-on'
-                }
-              ]
-            }
-          ]
-        }
-      ]
+      defaultActive: "1",
+      menuList: []
     }
   },
 

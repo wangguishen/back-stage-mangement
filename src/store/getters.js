@@ -23,6 +23,13 @@ const getters = {
       state.basic.crumbsList = status
     }
     return state.basic.crumbsList
+  },
+  getCurrentCrumbs: state => { // 当前头部导航
+    const status = getSesStorage('CURRENT_CRUMBS', 'json')
+    if (status) {
+      state.basic.currentCrumbs = status
+    }
+    return state.basic.currentCrumbs
   }
 }
 

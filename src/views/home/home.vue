@@ -15,5 +15,7 @@ export default {
 </script>
 
 <style lang="scss">
-
+  .sy{
+    background: $blue;
+  }
 </style>

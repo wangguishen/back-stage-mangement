@@ -14,3 +14,6 @@ export const SET_CRUMBS_NUM = "SET_CRUMBS_NUM"
 
 // 头部导航列表
 export const SET_CRUMBS_LIST = "SET_CRUMBS_LIST"
+
+// 当前头部导航
+export const SET_CURRENT_CRUMBS = "SET_CURRENT_CRUMBS"

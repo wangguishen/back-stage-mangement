@@ -7,6 +7,7 @@ import store from '@/store/index.js'
 window.addEventListener('resize', function () {
   const clientWidth = document.documentElement.clientWidth
   const clientHeight = document.documentElement.clientHeight
+  console.log(clientWidth)
 
   store.dispatch('setScreenWidth', clientWidth)
   store.dispatch('setScreenHeight', clientHeight)
@@ -27,6 +28,9 @@ export const mixins = {
     },
     crumbsNum () {
       return this.$store.getters.getCrumbsNum
+    },
+    currentCrumbs () {
+      return this.$store.getters.getCurrentCrumbs
     },
     crumbsList () {
       return this.$store.getters.getCrumbsList

@@ -49,6 +49,7 @@ export default {
       const self = this;
       let crumbsList = self.$store.getters.getCrumbsList
       let crumbs = {
+        id: menu.id,
         path: menu.path,
         name: menu.title
       }
@@ -60,11 +61,13 @@ export default {
       if (!result) { // 如果不存在
         crumbsList.push(crumbs)
         self.$store.dispatch('setCrumbsList', crumbsList)
-        self.$store.dispatch('setCrumbsNum', crumbsList.length - 1)
+        self.$store.dispatch('setCurrentCrumbs', crumbs)
+        self.$store.dispatch('setCrumbsNum', crumbsList[crumbsList.length - 1].path)
       } else {
         crumbsList.forEach((item, index) => {
           if (item.path === crumbs.path) {
-            self.$store.dispatch('setCrumbsNum', index)
+            self.$store.dispatch('setCrumbsNum', crumbs.path)
+            self.$store.dispatch('setCurrentCrumbs', crumbs)
           }
         })
       }
