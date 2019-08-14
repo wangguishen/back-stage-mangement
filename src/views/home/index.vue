@@ -63,9 +63,10 @@ export default {
     .main-box{
       padding: 20px;
       box-sizing: border-box;
-      div{
+      .page-box{
         width: 100%;
         height: 100%;
+        background: #FFF;
       }
     }
   }

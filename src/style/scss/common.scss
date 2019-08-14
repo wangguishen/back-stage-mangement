@@ -25,3 +25,14 @@
     color: $blue;
   }
 }
+
+// 行内from表单
+.toolbar {
+  background: #fff;
+  height: 30px;
+  padding: 10px 5px 10px 20px;
+  margin-bottom: 10px;
+  .el-form-item {
+    margin-bottom: 10px;
+  }
+}
