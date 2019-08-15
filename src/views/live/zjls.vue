@@ -36,17 +36,47 @@
           </el-form-item>
           <el-form-item>
             <el-button type="primary" icon="el-icon-search" @click="searchClick">查询</el-button>
+            <el-button type="primary" icon="el-icon-plus" @click="addClick">新增</el-button>
             <el-button type="primary" icon="el-icon-download" @click="deriveClick">导出</el-button>
           </el-form-item>
         </el-form>
+      </el-col>
+      <el-col :span="24">
+        <el-table
+          :data="zjlsList"
+          stripe
+          border
+          id="zjls-table"
+          style="width: 100%">
+          <el-table-column fixed="left" label="序号" type="index" width="50" />
+          <el-table-column label="拥有者" prop="name" />
+          <el-table-column label="借款人" prop="load_name" />
+          <el-table-column label="金额" prop="sum" />
+          <el-table-column label="借款日期" prop="load_date" />
+          <el-table-column label="还款人" prop="repay_name" />
+          <el-table-column label="还款日期" prop="repay_date" />
+          <el-table-column label="原因" prop="desc" />
+          <el-table-column
+            fixed="right"
+            label="操作"
+            width="150">
+            <template slot-scope="scope">
+              <el-button type="text" size="small">修改</el-button>
+              <el-button type="text" size="small">隐藏</el-button>
+              <el-button type="text" size="small">删除</el-button>
+            </template>
+          </el-table-column>
+        </el-table>
       </el-col>
     </el-row>
   </div>
 </template>
 
 <script>
+import { mixins } from '@/mixins'
 import { getCapitalBill } from '@/service/mockData'
 export default {
+  mixins: [mixins],
   data () {
     return {
       formData: {
@@ -92,6 +122,7 @@ export default {
           }
         }]
       },
+      zjlsList: []
     }
   },
   
@@ -108,16 +139,19 @@ export default {
     },
     deriveClick () { // 导出功能
       console.log("导出功能")
+      this.exportExcel('zjls-table', '资金流水')
     },
     async getCapitalBill () { // 获取资金流水列表
       const self = this;
       const param = {
         page: 1,
         rows: 10,
-        type: '2'
+        type: '2',
       }
       let res = await getCapitalBill(param)
       console.log("资金流水列表", res)
+      this.zjlsList = res.data.data
+      console.log(this.zjlsList)
     },
     changeCapitalType (key) { // 切换资金类型
       this.capitalTypeList.forEach(item => {
@@ -127,6 +161,9 @@ export default {
           this.placeholderObj.timeEnd = `${item.label}结束日期`
         }
       })
+    },
+    addClick () { // 新增功能
+      this.$message.warning('新增功能暂未开发，请耐心等待哦~')
     }
   }
 }

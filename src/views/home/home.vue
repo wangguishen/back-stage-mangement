@@ -1,5 +1,5 @@
 <template>
-  <div class="sy">
+  <div class="page-box sy">
     首页
   </div>
 </template>
