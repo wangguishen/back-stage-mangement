@@ -24,6 +24,13 @@ const routes = [
         meta: {
           title: '资金流水'
         }
+      }, {
+        path: '/study/mryl',
+        name: 'mryl',
+        component: () => import('@/views/study/one-day-one-exercise/mryl.vue'),
+        meta: {
+          title: '每日一练'
+        }
       }
     ]
   },

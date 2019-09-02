@@ -12,7 +12,7 @@ const _zjlsList = zjlsList;
  * rows 多少条
  * type 0 借款 1 还款 2 全部
  */
-mock.onPost('/live/getCapitalBill').reply(config => {
+mock.onPost('/CW000100').reply(config => {
   const {
     page,
     rows,

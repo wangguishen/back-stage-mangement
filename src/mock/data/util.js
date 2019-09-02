@@ -22,6 +22,18 @@ const asideList = [
         path: '/live/zjls'
       })
     ]
+  }), Mock.mock({
+    id: Random.increment().toString(),
+    title: '学习',
+    icon: "el-icon-s-open",
+    children: [
+      Mock.mock({
+        id: Random.increment().toString(),
+        title: '每日一练',
+        icon: "el-icon-s-claim",
+        path: '/study/mryl'
+      })
+    ]
   })
 ];
 

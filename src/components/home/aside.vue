@@ -17,7 +17,7 @@
 
 <script>
 import { mixins } from '@/mixins'
-import { getLeftNavigation } from '@/service/mockData'
+import { CW000001 } from '@/service/mock/util'
 import submenu from './submenu'
 export default {
   components: {
@@ -38,7 +38,7 @@ export default {
   },
 
   mounted () {
-    this.getLeftNavigation()
+    this.CW000001()
   },
 
   methods: {
@@ -48,9 +48,9 @@ export default {
     handleClose (key, keyPath) {
       console.log(key, keyPath);
     },
-    async getLeftNavigation () {
+    async CW000001 () {
       const param = {}
-      const res = await getLeftNavigation(param)
+      const res = await CW000001(param)
       this.menuList = res.data.data
       console.log(res)
     },

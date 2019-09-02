@@ -61,7 +61,7 @@
             label="操作"
             width="150">
             <template slot-scope="scope">
-              <el-button type="text" size="small">修改</el-button>
+              <el-button type="text" size="small" @click="amend(scope.row)">修改</el-button>
               <el-button type="text" size="small">隐藏</el-button>
               <el-button type="text" size="small">删除</el-button>
             </template>
@@ -74,7 +74,7 @@
 
 <script>
 import { mixins } from '@/mixins'
-import { getCapitalBill } from '@/service/mockData'
+import { CW000100 } from '@/service/mock/live'
 export default {
   mixins: [mixins],
   data () {
@@ -132,7 +132,7 @@ export default {
 
   methods: {
     init () { // 初始化
-      this.getCapitalBill()
+      this.CW000100()
     },
     searchClick () { // 查询功能
       console.log("查询功能")
@@ -141,14 +141,14 @@ export default {
       console.log("导出功能")
       this.exportExcel('zjls-table', '资金流水')
     },
-    async getCapitalBill () { // 获取资金流水列表
+    async CW000100 () { // 获取资金流水列表
       const self = this;
       const param = {
         page: 1,
         rows: 10,
         type: '2',
       }
-      let res = await getCapitalBill(param)
+      let res = await CW000100(param)
       console.log("资金流水列表", res)
       this.zjlsList = res.data.data
       console.log(this.zjlsList)
@@ -164,6 +164,9 @@ export default {
     },
     addClick () { // 新增功能
       this.$message.warning('新增功能暂未开发，请耐心等待哦~')
+    },
+    amend () { // 修改功能
+      this.$message.warning('修改功能暂未开发，请耐心等待哦~')
     }
   }
 }

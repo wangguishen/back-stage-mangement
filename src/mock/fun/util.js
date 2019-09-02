@@ -7,7 +7,7 @@ import {
 const _asideList = asideList;
 
 // 获取左侧导航栏数据
-mock.onPost('/sys/getLeftNavigation').reply(config => {
+mock.onPost('/CW000001').reply(config => {
   const mockStock = _asideList
   return new Promise((resolve, reject) => {
     resolve([200, {
