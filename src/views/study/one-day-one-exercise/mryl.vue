@@ -4,7 +4,7 @@
       <el-col :span="24">
         <el-form ref="screenFrom" :inline="true" size="medium" :model="formData" class="screen-from toolbar">
           <el-form-item>
-            <el-select v-model="formData.selectName" clearable :disabled="isSelectDisabled" placeholder="请选择标题名称">
+            <el-select v-model="formData.selectName" filterable :disabled="isSelectDisabled" clearable placeholder="请选择标题名称">
               <el-option
                 v-for="item in titleList"
                 :key="item.data"
@@ -31,7 +31,7 @@
     </el-row>
     <el-row>
       <el-col :span="24">
-        <modu-index v-if="isshow" :title="currentObj.title" :date="currentObj.date" />
+        <my-module v-if="isshow" />
       </el-col>
     </el-row>
   </div>
@@ -39,12 +39,12 @@
 
 <script>
 import { CW000200, CW000201 } from '@/service/mock/study/mryl'
-const moduIndex = resolve => require(['./index'], resolve)
-// import moduIndex from './index'
+let current = '2019-09-02'
+const myModule = () => import(`@/components/study/one-day-one-exercise/${current}.vue`)
 import { Format } from '@/utils/date'
 export default {
   components: {
-    moduIndex
+    myModule
   },
   data() {
     return {
@@ -126,7 +126,7 @@ export default {
       console.log('201', res)
       let obj = res.data.data
       this.currentObj = obj
-      window.sessionStorage.setItem('CURRENT_MODULE', JSON.stringify(obj));
+      current = obj.date
       this.isshow = true
     },
     searchClick () { // 查询
