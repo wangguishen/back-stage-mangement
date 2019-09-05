@@ -7,9 +7,9 @@
             <el-select v-model="formData.selectName" filterable :disabled="isSelectDisabled" clearable placeholder="请选择标题名称">
               <el-option
                 v-for="item in titleList"
-                :key="item.data"
+                :key="item.date"
                 :label="item.title"
-                :value="item.data">
+                :value="item.date">
               </el-option>
             </el-select>
           </el-form-item>
@@ -118,15 +118,24 @@ export default {
       console.log('---', res)
     },
     async CW000201 () {
-      let param = {
-        title: this.formData.selectName,
-        date: Format(this.formData.selectData, 'yyyy-MM-dd')
+      let param;
+      if (this.formData.selectName === '') {
+        param = {
+          // title: this.formData.selectName,
+          date: Format(this.formData.selectData, 'yyyy-MM-dd')
+        }
+      } else if (this.formData.selectData === '') {
+        param = {
+          // title: this.formData.selectName,
+          date: this.formData.selectName,
+        }
       }
       let res = await CW000201(param)
       console.log('201', res)
       let obj = res.data.data
       this.currentObj = obj
       current = obj.date
+      this.isshow = false
       this.isshow = true
     },
     searchClick () { // 查询
@@ -139,6 +148,6 @@ export default {
 
 <style lang="scss">
   .mryl{
-
+    
   }
 </style>

@@ -17,3 +17,7 @@ export const SET_CRUMBS_LIST = "SET_CRUMBS_LIST"
 
 // 当前头部导航
 export const SET_CURRENT_CRUMBS = "SET_CURRENT_CRUMBS"
+
+// study
+// 当前头部导航
+export const SET_SELECT_DATE = "SET_SELECT_DATE"

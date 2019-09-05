@@ -1,6 +1,6 @@
 <template>
-  <div class="page-box">
-    2019-09-02
+  <div class="s-19-09-05">
+    2019-09-05
   </div>
 </template>
 
@@ -22,6 +22,8 @@ export default {
 }
 </script>
 
-<style lang="scss">
-  
+<style lang="scss" style>
+  .s-19-09-05{
+    background: $blue;
+  }
 </style>

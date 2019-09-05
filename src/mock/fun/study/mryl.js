@@ -30,9 +30,6 @@ mock.onPost('/CW000201').reply(config => {
   let mockStock = {}
   console.log(_mrylList)
   _mrylList.forEach((item, index) => {
-    console.log(item)
-    console.log(title)
-    console.log(date)
     if (title && title !== '' && title === item.title) {
       mockStock = item
     } else if (date && date !== '' && date === item.date) {

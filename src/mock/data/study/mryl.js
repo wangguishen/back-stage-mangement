@@ -12,6 +12,10 @@ const mrylList = [
     id: Random.increment().toString(),
     title: '扭动的蠕虫',
     date: '2019-09-02'
+  }, {
+    id: Random.increment().toString(),
+    title: '集体舞动画催眠',
+    date: '2019-09-05'
   }
 ];
 

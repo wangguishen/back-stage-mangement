@@ -30,6 +30,14 @@ const getters = {
       state.basic.currentCrumbs = status
     }
     return state.basic.currentCrumbs
+  },
+  // study  学习模块
+  getSelectDate: state => { // 每日一练选择日期
+    const status = getSesStorage('STUDY_SELECT_DATE')
+    if (status) {
+      state.study.selectDate = status
+    }
+    return state.study.selectDate
   }
 }
 
