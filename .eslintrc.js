@@ -25,6 +25,7 @@ module.exports = {
     "vue/singleline-html-element-content-newline": "off",
     "vue/multiline-html-element-content-newline":"off",
     "vue/require-prop-types":"off",
+    "vue/require-default-prop":"off",
     "vue/name-property-casing": 'off',
     "vue/no-v-html": "off",
     'accessor-pairs': 2,
@@ -77,7 +78,7 @@ module.exports = {
     'no-console': 0,
     'no-class-assign': 2,
     'no-cond-assign': 2,
-    'no-const-assign': 2,
+    'no-const-assign': 0,
     'no-control-regex': 0,
     'no-delete-var': 2,
     'no-dupe-args': 2,
@@ -188,7 +189,7 @@ module.exports = {
     'wrap-iife': [2, 'any'],
     'yield-star-spacing': [2, 'both'],
     'yoda': [2, 'never'],
-    'prefer-const': 2,
+    'prefer-const': 0,
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
     'object-curly-spacing': [2, 'always', {
       objectsInObjects: false
