@@ -1,6 +1,8 @@
 <template>
   <div class="module-box">
-    2019-09-02
+    <div>
+      123131
+    </div>
   </div>
 </template>
 
@@ -8,7 +10,7 @@
 export default {
   data() {
     return {
-
+      list: []
     }
   },
 

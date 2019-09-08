@@ -31,7 +31,7 @@
     </el-row>
     <el-row>
       <el-col :span="24">
-        <my-content :currentObj="currentObj" />
+        <my-content :currentObj="currentObj" :contentNum='contentNum' />
       </el-col>
     </el-row>
   </div>
@@ -82,7 +82,8 @@ export default {
       currentObj: {
         title: '',
         date: '2019-09-02'
-      }
+      },
+      contentNum: 0
     }
   },
 
@@ -119,22 +120,19 @@ export default {
       console.log('---', res)
     },
     async CW000201 () {
-      let param;
+      let param = {
+        date: ''
+      };
       if (this.formData.selectName === '') {
-        param = {
-          // title: this.formData.selectName,
-          date: Format(this.formData.selectData, 'yyyy-MM-dd')
-        }
+        param.date = Format(this.formData.selectData, 'yyyy-MM-dd')
       } else if (this.formData.selectData === '') {
-        param = {
-          // title: this.formData.selectName,
-          date: this.formData.selectName,
-        }
+        param.date = this.formData.selectName
       }
       let res = await CW000201(param)
       console.log('201', res)
       let obj = res.data.data
       this.currentObj = obj
+      this.contentNum = this.contentNum + 1
     },
     searchClick () { // 查询
       this.CW000201()

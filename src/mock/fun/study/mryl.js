@@ -23,22 +23,30 @@ mock.onPost('/CW000200').reply(config => {
  */
 mock.onPost('/CW000201').reply(config => {
   const {
+    page,
+    rows,
     title,
     date
   } = JSON.parse(config.data);
 
   let mockStock = {}
   console.log(_mrylList)
-  _mrylList.forEach((item, index) => {
-    if (title && title !== '' && title === item.title) {
-      mockStock = item
-    } else if (date && date !== '' && date === item.date) {
-      mockStock = item
-    }
-  })
+  if (title === '' && date === '') {
+    mockStock = _mrylList.filter((u, index) => index < rows * page && index >= rows * (page - 1));
+  } else {
+    _mrylList.forEach((item, index) => {
+      if (title && title !== '' && title === item.title) {
+        mockStock = item
+      } else if (date && date !== '' && date === item.date) {
+        mockStock = item
+      }
+    })
+  }
+  const allTotal = mockStock.length;
   console.log(mockStock)
   return new Promise((resolve, reject) => {
     resolve([200, {
+      allTotal: allTotal,
       data: mockStock
     }]);
   });
