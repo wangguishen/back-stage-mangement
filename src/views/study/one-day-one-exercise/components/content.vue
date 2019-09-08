@@ -1,23 +1,19 @@
 <template>
   <div class="content">
-    {{ title }}
-    <my-module />
+    {{ currentObj.title }}
+    <my20190902 v-if="currentObj.date === '2019-09-02'" />
   </div>
 </template>
 
 <script>
-import { getSesStorage } from '@/utils/storageUtil'
-
-let current = getSesStorage('STUDY_SELECT_DATE')
-console.log(current)
-const myModule = () => import(`@/components/study/one-day-one-exercise/${current}.vue`)
+const my20190902 = resolve => require(['@/components/study/one-day-one-exercise/2019-09-02'], resolve)
 export default {
   components: {
-    myModule
+    my20190902
   },
 
   props: {
-    title: String
+    currentObj: Object
   },
 
   data() {

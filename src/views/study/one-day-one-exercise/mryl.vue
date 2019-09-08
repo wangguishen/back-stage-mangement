@@ -31,7 +31,7 @@
     </el-row>
     <el-row>
       <el-col :span="24">
-        <my-module v-if="isshow" />
+        <my-content :currentObj="currentObj" />
       </el-col>
     </el-row>
   </div>
@@ -39,12 +39,11 @@
 
 <script>
 import { CW000200, CW000201 } from '@/service/mock/study/mryl'
-let current = '2019-09-02'
-const myModule = () => import(`@/components/study/one-day-one-exercise/${current}.vue`)
+import myContent from './components/content'
 import { Format } from '@/utils/date'
 export default {
   components: {
-    myModule
+    myContent
   },
   data() {
     return {
@@ -80,8 +79,10 @@ export default {
       titleList: [],
       isSelectDisabled: false,
       isDateDisabled: false,
-      currentObj: {},
-      isshow: false
+      currentObj: {
+        title: '',
+        date: '2019-09-02'
+      }
     }
   },
 
@@ -134,9 +135,6 @@ export default {
       console.log('201', res)
       let obj = res.data.data
       this.currentObj = obj
-      current = obj.date
-      this.isshow = false
-      this.isshow = true
     },
     searchClick () { // 查询
       this.CW000201()
