@@ -9,8 +9,8 @@
                 v-for="item in titleList"
                 :key="item.date"
                 :label="item.title"
-                :value="item.date">
-              </el-option>
+                :value="item.date"
+              />
             </el-select>
           </el-form-item>
           <el-form-item>
@@ -20,8 +20,8 @@
               type="date"
               :disabled="isDateDisabled"
               placeholder="选择查看日期"
-              :picker-options="pickerOptions">
-            </el-date-picker>
+              :picker-options="pickerOptions"
+            />
           </el-form-item>
           <el-form-item>
             <el-button type="primary" icon="el-icon-search" :disabled="!isSelectDisabled && !isDateDisabled" @click="searchClick">查询</el-button>
@@ -31,7 +31,7 @@
     </el-row>
     <el-row>
       <el-col :span="24">
-        <my-content :currentObj="currentObj" :contentNum='contentNum' />
+        <my-content :current-obj="currentObj" :content-num="contentNum" />
       </el-col>
     </el-row>
   </div>
@@ -45,31 +45,31 @@ export default {
   components: {
     myContent
   },
-  data() {
+  data () {
     return {
       formData: {
         selectName: '', // 标题
         selectData: '' // 时间
       },
       pickerOptions: {
-        disabledDate(time) {
+        disabledDate (time) {
           return time.getTime() > Date.now();
         },
         shortcuts: [{
           text: '今天',
-          onClick(picker) {
+          onClick (picker) {
             picker.$emit('pick', new Date());
           }
         }, {
           text: '昨天',
-          onClick(picker) {
+          onClick (picker) {
             const date = new Date();
             date.setTime(date.getTime() - 3600 * 1000 * 24);
             picker.$emit('pick', date);
           }
         }, {
           text: '一周前',
-          onClick(picker) {
+          onClick (picker) {
             const date = new Date();
             date.setTime(date.getTime() - 3600 * 1000 * 24 * 7);
             picker.$emit('pick', date);
@@ -136,14 +136,14 @@ export default {
     },
     searchClick () { // 查询
       this.CW000201()
-    },
-    
+    }
+
   }
 }
 </script>
 
 <style lang="scss">
   .mryl{
-    
+
   }
 </style>

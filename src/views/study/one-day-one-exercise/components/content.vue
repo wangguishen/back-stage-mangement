@@ -23,7 +23,7 @@ export default {
     contentNum: Number
   },
 
-  data() {
+  data () {
     return {
 
     }
@@ -40,5 +40,5 @@ export default {
 </script>
 
 <style lang="scss">
-  
+
 </style>

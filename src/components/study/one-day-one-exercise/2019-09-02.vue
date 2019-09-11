@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
 
     }
@@ -23,5 +23,5 @@ export default {
 </script>
 
 <style lang="scss">
-  
+
 </style>
