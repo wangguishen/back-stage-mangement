@@ -10,6 +10,11 @@ const Random = Mock.Random;
 const mrylList = [
   {
     id: Random.increment().toString(),
+    title: '愤怒小鸟 -- 红火',
+    date: '2019-09-01',
+    bgColor: Random.color()
+  }, {
+    id: Random.increment().toString(),
     title: '扭动的蠕虫',
     date: '2019-09-02',
     bgColor: Random.color()

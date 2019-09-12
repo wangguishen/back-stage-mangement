@@ -1,5 +1,5 @@
 <template>
-  <div class="module-box">
+  <div class="module">
     2019-09-02
   </div>
 </template>

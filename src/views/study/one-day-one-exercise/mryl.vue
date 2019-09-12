@@ -1,6 +1,6 @@
 <template>
   <div class="page-box mryl">
-    <el-row>
+    <el-row class="search-box">
       <el-col :span="24">
         <el-form ref="screenFrom" :inline="true" size="medium" :model="formData" class="screen-from toolbar">
           <el-form-item>
@@ -49,7 +49,7 @@ export default {
     return {
       formData: {
         selectName: '', // 标题
-        selectData: '' // 时间
+        selectData: new Date('2019-09-01') // 时间
       },
       pickerOptions: {
         disabledDate (time) {
@@ -81,7 +81,7 @@ export default {
       isDateDisabled: false,
       currentObj: {
         title: '',
-        date: '2019-09-02'
+        date: '2019-09-01'
       },
       contentNum: 0
     }
@@ -113,6 +113,7 @@ export default {
   methods: {
     init () { // 初始化
       this.CW000200()
+      this.CW000201()
     },
     async CW000200 () {
       let param = {
@@ -148,6 +149,8 @@ export default {
 
 <style lang="scss">
   .mryl{
-
+    .search-box{
+      padding: 0 20px;
+    }
   }
 </style>

@@ -20,7 +20,7 @@
         >
           <transition name="fade" mode="out-in">
             <!-- <keep-alive :include="cachedViews"> -->
-              <router-view />
+            <router-view />
             <!-- </keep-alive> -->
           </transition>
         </div>
@@ -41,13 +41,13 @@ export default {
   mixins: [mixins],
   data () {
     return {
-      
+
     }
   },
   computed: {
     isCollapse () {
       return this.$store.getters.getIsCollapse
-    },
+    }
   }
 }
 </script>
@@ -66,7 +66,7 @@ export default {
       .page-box{
         width: 100%;
         height: 100%;
-        padding: 20px;
+        padding: 20px 0;
         background: #FFF;
         box-sizing: border-box;
       }
