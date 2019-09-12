@@ -7,7 +7,7 @@
             <el-select v-model="formData.selectName" filterable :disabled="isSelectDisabled" clearable placeholder="请选择标题名称">
               <el-option
                 v-for="item in titleList"
-                :key="item.date"
+                :key="item.id"
                 :label="item.title"
                 :value="item.date"
               />
@@ -115,9 +115,13 @@ export default {
       this.CW000200()
     },
     async CW000200 () {
-      let res = await CW000200({})
-      this.titleList = res.data.data
+      let param = {
+        page: 1,
+        rows: 100
+      }
+      let res = await CW000200(param)
       console.log('---', res)
+      this.titleList = res.data.data
     },
     async CW000201 () {
       let param = {

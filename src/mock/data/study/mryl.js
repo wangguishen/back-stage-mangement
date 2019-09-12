@@ -21,27 +21,27 @@ const mrylList = [
   }, {
     id: Random.increment().toString(),
     title: '集体舞动画催眠',
-    date: '2019-09-05',
+    date: '2019-09-06',
     bgColor: Random.color()
   }, {
     id: Random.increment().toString(),
     title: '集体舞动画催眠',
-    date: '2019-09-05',
+    date: '2019-09-07',
     bgColor: Random.color()
   }, {
     id: Random.increment().toString(),
     title: '集体舞动画催眠',
-    date: '2019-09-05',
+    date: '2019-09-08',
     bgColor: Random.color()
   }, {
     id: Random.increment().toString(),
     title: '集体舞动画催眠',
-    date: '2019-09-05',
+    date: '2019-09-09',
     bgColor: Random.color()
   }, {
     id: Random.increment().toString(),
     title: '集体舞动画催眠',
-    date: '2019-09-05',
+    date: '2019-09-10',
     bgColor: Random.color()
   }
 ];

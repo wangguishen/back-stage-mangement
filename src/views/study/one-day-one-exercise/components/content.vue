@@ -6,6 +6,7 @@
     <div v-else>
       {{ currentObj.title }}
       <my20190902 v-if="currentObj.date === '2019-09-02'" />
+      <my20190905 v-else-if="currentObj.date === '2019-09-05'" />
     </div>
   </div>
 </template>
@@ -13,9 +14,10 @@
 <script>
 const myContent = resolve => require(['@/components/study/one-day-one-exercise/content'], resolve)
 const my20190902 = resolve => require(['@/components/study/one-day-one-exercise/2019-09-02'], resolve)
+const my20190905 = resolve => require(['@/components/study/one-day-one-exercise/2019-09-05'], resolve)
 export default {
   components: {
-    myContent, my20190902
+    myContent, my20190902, my20190905
   },
 
   props: {
