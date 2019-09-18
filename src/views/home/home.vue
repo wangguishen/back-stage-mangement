@@ -10,6 +10,12 @@ export default {
     return {
 
     }
+  },
+  created () {
+    // this.s1()
+  },
+  methods: {
+
   }
 }
 </script>
