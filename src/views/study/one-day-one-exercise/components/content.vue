@@ -8,7 +8,8 @@
       <div :style="{height: (screenHeight - 60 - 32 - 60 - 50 - 60) + 'px'}">
         <my20190901 v-if="currentObj.date === '2019-09-01'" class="module-content" />
         <my20190902 v-if="currentObj.date === '2019-09-02'" class="module-content" />
-        <my20190905 v-else-if="currentObj.date === '2019-09-05'" class="module-content" />
+        <my20190905 v-if="currentObj.date === '2019-09-05'" class="module-content" />
+        <my20190918 v-if="currentObj.date === '2019-09-18'" class="module-content" />
       </div>
     </div>
   </div>
@@ -20,9 +21,10 @@ const myContent = resolve => require(['@/components/study/one-day-one-exercise/c
 const my20190901 = resolve => require(['@/components/study/one-day-one-exercise/2019-09-01'], resolve)
 const my20190902 = resolve => require(['@/components/study/one-day-one-exercise/2019-09-02'], resolve)
 const my20190905 = resolve => require(['@/components/study/one-day-one-exercise/2019-09-05'], resolve)
+const my20190918 = resolve => require(['@/components/study/one-day-one-exercise/2019-09-18'], resolve)
 export default {
   components: {
-    myContent, my20190901, my20190902, my20190905
+    myContent, my20190901, my20190902, my20190905, my20190918
   },
 
   mixins: [mixins],

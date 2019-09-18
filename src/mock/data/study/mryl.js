@@ -25,8 +25,8 @@ const mrylList = [
     bgColor: Random.color()
   }, {
     id: Random.increment().toString(),
-    title: '集体舞动画催眠',
-    date: '2019-09-06',
+    title: '飞车加载动画',
+    date: '2019-09-18',
     bgColor: Random.color()
   }, {
     id: Random.increment().toString(),
