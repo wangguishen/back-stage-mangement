@@ -30,8 +30,8 @@ const mrylList = [
     bgColor: Random.color()
   }, {
     id: Random.increment().toString(),
-    title: '集体舞动画催眠',
-    date: '2019-09-07',
+    title: '女神来了，快让路',
+    date: '2019-09-19',
     bgColor: Random.color()
   }, {
     id: Random.increment().toString(),
