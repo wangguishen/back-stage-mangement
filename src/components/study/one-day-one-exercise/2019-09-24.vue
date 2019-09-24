@@ -31,7 +31,6 @@ export default {
 
 <style lang="scss" scoped>
 .module{
-  background: cadetblue;
   .taiji{
     width: 300px;
     height: 300px;
