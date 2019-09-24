@@ -11,6 +11,11 @@
         <my20190905 v-if="currentObj.date === '2019-09-05'" class="module-content" />
         <my20190918 v-if="currentObj.date === '2019-09-18'" class="module-content" />
         <my20190919 v-if="currentObj.date === '2019-09-19'" class="module-content" />
+        <my20190920 v-if="currentObj.date === '2019-09-20'" class="module-content" />
+        <my20190921 v-if="currentObj.date === '2019-09-21'" class="module-content" />
+        <my20190922 v-if="currentObj.date === '2019-09-22'" class="module-content" />
+        <my20190923 v-if="currentObj.date === '2019-09-23'" class="module-content" />
+        <my20190924 v-if="currentObj.date === '2019-09-24'" class="module-content" />
       </div>
     </div>
   </div>
@@ -24,9 +29,14 @@ const my20190902 = resolve => require(['@/components/study/one-day-one-exercise/
 const my20190905 = resolve => require(['@/components/study/one-day-one-exercise/2019-09-05'], resolve)
 const my20190918 = resolve => require(['@/components/study/one-day-one-exercise/2019-09-18'], resolve)
 const my20190919 = resolve => require(['@/components/study/one-day-one-exercise/2019-09-19'], resolve)
+const my20190920 = resolve => require(['@/components/study/one-day-one-exercise/2019-09-20'], resolve)
+const my20190921 = resolve => require(['@/components/study/one-day-one-exercise/2019-09-21'], resolve)
+const my20190922 = resolve => require(['@/components/study/one-day-one-exercise/2019-09-22'], resolve)
+const my20190923 = resolve => require(['@/components/study/one-day-one-exercise/2019-09-23'], resolve)
+const my20190924 = resolve => require(['@/components/study/one-day-one-exercise/2019-09-24'], resolve)
 export default {
   components: {
-    myContent, my20190901, my20190902, my20190905, my20190918, my20190919
+    myContent, my20190901, my20190902, my20190905, my20190918, my20190919, my20190920, my20190921, my20190922, my20190923, my20190924
   },
 
   mixins: [mixins],

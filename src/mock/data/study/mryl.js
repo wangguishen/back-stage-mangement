@@ -36,17 +36,27 @@ const mrylList = [
   }, {
     id: Random.increment().toString(),
     title: '集体舞动画催眠',
-    date: '2019-09-08',
+    date: '2019-09-20',
     bgColor: Random.color()
   }, {
     id: Random.increment().toString(),
     title: '集体舞动画催眠',
-    date: '2019-09-09',
+    date: '2019-09-21',
     bgColor: Random.color()
   }, {
     id: Random.increment().toString(),
     title: '集体舞动画催眠',
-    date: '2019-09-10',
+    date: '2019-09-22',
+    bgColor: Random.color()
+  }, {
+    id: Random.increment().toString(),
+    title: '集体舞动画催眠',
+    date: '2019-09-23',
+    bgColor: Random.color()
+  }, {
+    id: Random.increment().toString(),
+    title: '旋转的太极',
+    date: '2019-09-24',
     bgColor: Random.color()
   }
 ];
