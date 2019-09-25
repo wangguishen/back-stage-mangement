@@ -16,6 +16,7 @@
         <my20190922 v-if="currentObj.date === '2019-09-22'" class="module-content" />
         <my20190923 v-if="currentObj.date === '2019-09-23'" class="module-content" />
         <my20190924 v-if="currentObj.date === '2019-09-24'" class="module-content" />
+        <my20190925 v-if="currentObj.date === '2019-09-25'" class="module-content" />
       </div>
     </div>
   </div>
@@ -34,9 +35,10 @@ const my20190921 = resolve => require(['@/components/study/one-day-one-exercise/
 const my20190922 = resolve => require(['@/components/study/one-day-one-exercise/2019-09-22'], resolve)
 const my20190923 = resolve => require(['@/components/study/one-day-one-exercise/2019-09-23'], resolve)
 const my20190924 = resolve => require(['@/components/study/one-day-one-exercise/2019-09-24'], resolve)
+const my20190925 = resolve => require(['@/components/study/one-day-one-exercise/2019-09-25'], resolve)
 export default {
   components: {
-    myContent, my20190901, my20190902, my20190905, my20190918, my20190919, my20190920, my20190921, my20190922, my20190923, my20190924
+    myContent, my20190901, my20190902, my20190905, my20190918, my20190919, my20190920, my20190921, my20190922, my20190923, my20190924, my20190925
   },
 
   mixins: [mixins],

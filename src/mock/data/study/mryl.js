@@ -58,6 +58,11 @@ const mrylList = [
     title: '旋转的太极',
     date: '2019-09-24',
     bgColor: Random.color()
+  }, {
+    id: Random.increment().toString(),
+    title: '情侣亲吻',
+    date: '2019-09-25',
+    bgColor: Random.color()
   }
 ];
 
