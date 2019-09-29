@@ -150,7 +150,7 @@ const mrylList = [
     bgColor: Random.color()
   }, {
     id: Random.increment().toString(),
-    title: '情侣亲吻',
+    title: '抽象的小鸟',
     date: '2019-09-29',
     bgColor: Random.color()
   }, {
