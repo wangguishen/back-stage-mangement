@@ -49,7 +49,7 @@ export default {
     return {
       formData: {
         selectName: '', // 标题
-        selectData: new Date('2019-10-12') // 时间
+        selectData: new Date('2019-10-11') // 时间
       },
       pickerOptions: {
         disabledDate (time) {

@@ -375,7 +375,7 @@ const mrylList = [
     bgColor: Random.color()
   }, {
     id: Random.increment().toString(),
-    title: 'xxx',
+    title: '背景45°折角',
     year: '2019',
     month: '10',
     day: '11',
