@@ -6,6 +6,7 @@
 
 <script>
 export default {
+  name: 'my20190930',
   data () {
     return {
 

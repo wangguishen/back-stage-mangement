@@ -34,6 +34,7 @@ import myAside from '@/components/home/aside'
 import myHeader from '@/components/home/header'
 import myCrumbs from '@/components/crumbs/index'
 import { mixins } from '@/mixins'
+import { CW000200 } from '@/service/mock/study/mryl'
 export default {
   components: {
     myAside, myHeader, myCrumbs
@@ -47,6 +48,23 @@ export default {
   computed: {
     isCollapse () {
       return this.$store.getters.getIsCollapse
+    }
+  },
+  created () {
+    this.init()
+  },
+  methods: {
+    init () {
+      this.CW000200()
+    },
+    async CW000200 () {
+      let param = {
+        page: 1,
+        rows: 1000
+      }
+      let res = await CW000200(param)
+      console.log('---res', res)
+      this.$store.dispatch('setStudyList', res.data.data)
     }
   }
 }

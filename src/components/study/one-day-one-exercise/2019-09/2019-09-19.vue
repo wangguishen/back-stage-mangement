@@ -14,6 +14,7 @@
 
 <script>
 export default {
+  name: 'my20190919',
   data () {
     return {
 

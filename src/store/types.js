@@ -19,5 +19,8 @@ export const SET_CRUMBS_LIST = "SET_CRUMBS_LIST"
 export const SET_CURRENT_CRUMBS = "SET_CURRENT_CRUMBS"
 
 // study
-// 当前头部导航
+// 学习日期
 export const SET_SELECT_DATE = "SET_SELECT_DATE"
+
+// 学习数据
+export const SET_STUDY_LIST = "SET_STUDY_LIST"

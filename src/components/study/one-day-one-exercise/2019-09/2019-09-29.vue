@@ -47,6 +47,7 @@
 
 <script>
 export default {
+  name: 'my20190929',
   data () {
     return {
       plumeList: [ // 羽毛列表
