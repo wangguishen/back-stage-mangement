@@ -348,7 +348,7 @@ const mrylList = [
     bgColor: Random.color()
   }, {
     id: Random.increment().toString(),
-    title: 'xxx',
+    title: '45°折角 -- 透明',
     year: '2019',
     month: '10',
     day: '08',
@@ -357,7 +357,7 @@ const mrylList = [
     bgColor: Random.color()
   }, {
     id: Random.increment().toString(),
-    title: 'xxx',
+    title: '45°折角 -- 指定背景',
     year: '2019',
     month: '10',
     day: '09',
@@ -366,7 +366,7 @@ const mrylList = [
     bgColor: Random.color()
   }, {
     id: Random.increment().toString(),
-    title: 'xxx',
+    title: '其他角度折角 -- 无圆角',
     year: '2019',
     month: '10',
     day: '10',
@@ -375,7 +375,7 @@ const mrylList = [
     bgColor: Random.color()
   }, {
     id: Random.increment().toString(),
-    title: '背景45°折角',
+    title: '其他角度折角 -- 有圆角',
     year: '2019',
     month: '10',
     day: '11',
