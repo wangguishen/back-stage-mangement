@@ -382,6 +382,13 @@ const mrylList = [
     // date: '2019-10-11',
     // routerName: 'my20191011',
     bgColor: Random.color()
+  }, {
+    id: Random.increment().toString(),
+    title: 'xxx',
+    year: '2019',
+    month: '10',
+    day: '12',
+    bgColor: Random.color()
   }
 ];
 
