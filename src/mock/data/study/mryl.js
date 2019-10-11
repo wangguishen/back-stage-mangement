@@ -5,7 +5,9 @@ const Random = Mock.Random;
  * 获取每日一练数据
  * id         -->   唯一标识
  * title      -->   标题
- * data       -->   日期
+ * data       -->   日期（模块文件名）
+ * routerName -->   模块名称（模块name）
+ * bgColor    -->   模块默认背景色
  */
 const mrylList = [
   {
