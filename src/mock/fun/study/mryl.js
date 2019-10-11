@@ -40,7 +40,7 @@ mock.onPost('/CW000201').reply(config => {
   _mrylList.forEach((item, index) => {
     if (title && title !== '' && title === item.title) {
       mockStock = item
-    } else if (date && date !== '' && date === item.date) {
+    } else if (date && date !== '' && date === `${item.year}-${item.month}-${item.day}`) {
       mockStock = item
     }
   })

@@ -6,7 +6,8 @@
     <div v-else>
       <div class="module-title">{{ currentObj.title }}</div>
       <div :style="{height: (screenHeight - 60 - 32 - 60 - 50 - 60) + 'px'}">
-        <components :is="currentObj.routerName" />
+        <!-- <components :is="currentObj.routerName" /> -->
+        <components :is="'my' + currentObj.year + currentObj.month + currentObj.day" />
       </div>
     </div>
   </div>

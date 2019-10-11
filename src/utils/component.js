@@ -4,7 +4,8 @@ const studyList = getSesStorage('STUDY_LIST', 'json')
 
 let component = {}
 studyList.forEach(item => {
-  component[item.routerName] = () => import(`@/components/study/one-day-one-exercise/2019-09/${item.date}`)
+  let routerName = `my${item.year}${item.month}${item.day}`
+  component[routerName] = () => import(`@/components/study/one-day-one-exercise/${item.year}-${item.month}/${item.year}-${item.month}-${item.day}`)
 })
 
 export default component
