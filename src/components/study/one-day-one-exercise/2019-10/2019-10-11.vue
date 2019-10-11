@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'my20191011',
+  name: 'my20191010',
   data () {
     return {
       list: [
@@ -46,18 +46,63 @@ export default {
     background: #00A7FA;
     box-sizing: border-box;
     margin-right: 20px;
+    border-radius: 6px;
   }
   .lt_bevel{
-    background: linear-gradient(135deg, transparent 20px, #00A7FA 0);
+    background:linear-gradient(150deg, transparent calc(30px / 1.414), #00A7FA 0);
+  }
+  .lt_bevel::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to right bottom, transparent 50%, #faad00 0) no-repeat 0 0;
+    width: calc(calc(30px / 1.414) * 2);
+    height: calc(calc(30px / 1.414) * 2 / 1.732);
+    transform: rotateY(180deg) rotate(60deg);
+    border-bottom-right-radius: inherit;
   }
   .rt_bevel{
-    background: linear-gradient(-135deg, transparent 20px, #00A7FA 0);
+    background: linear-gradient(-150deg, transparent calc(30px / 1.414), #00A7FA 0);
+  }
+  .rt_bevel::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: linear-gradient(to left bottom, transparent 50%, #faad00 0) 100% 0 no-repeat;
+    width: calc(calc(30px / 1.414) * 2);
+    height: calc(calc(30px / 1.414) * 2 / 1.732);
+    transform: rotateY(180deg) rotate(-60deg);
+    border-bottom-left-radius: inherit;
   }
   .rb_bevel{
-    background: linear-gradient(-45deg, transparent 20px, #00A7FA 0);
+    background: linear-gradient(-30deg, transparent calc(30px / 1.414), #00A7FA 0);
+  }
+  .rb_bevel::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(to left top, transparent 50%, #faad00 0) no-repeat 100% 100%;
+    width: calc(calc(30px / 1.414) * 2);
+    height: calc(calc(30px / 1.414) * 2 / 1.732);
+    transform: rotateY(180deg) rotate(60deg);
+    border-top-left-radius: inherit;
   }
   .lb_bevel{
-    background: linear-gradient(45deg, transparent 20px, #00A7FA 0);
+    background: linear-gradient(30deg, transparent calc(30px / 1.414), #00A7FA 0);
+  }
+  .lb_bevel::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to right top, transparent 50%, #faad00 0) no-repeat 0 100%;
+    width: calc(calc(30px / 1.414) * 2);
+    height: calc(calc(30px / 1.414) * 2 / 1.732);
+    transform: rotateY(180deg) rotate(-60deg);
+    border-top-right-radius: inherit;
   }
 }
 </style>

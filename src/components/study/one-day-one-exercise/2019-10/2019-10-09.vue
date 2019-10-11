@@ -49,23 +49,23 @@ export default {
   }
   .lt_bevel{
     background:
-      linear-gradient(to right bottom, transparent 50%, #faad00 0) no-repeat 0 0 / calc(20px * 1.414) calc(20px * 1.414),
-      linear-gradient(135deg, transparent 20px, #00A7FA 0);
+      linear-gradient(to right bottom, transparent 50%, #faad00 0) no-repeat 0 0 / 20px 20px,
+      linear-gradient(135deg, transparent calc(20px / 1.414), #00A7FA 0);
   }
   .rt_bevel{
     background:
-      linear-gradient(to left bottom, transparent 50%, #faad00 0) no-repeat 100% 0 / calc(20px * 1.414) calc(20px * 1.414),
-      linear-gradient(-135deg, transparent 20px, #00A7FA 0);
+      linear-gradient(to left bottom, transparent 50%, #faad00 0) no-repeat 100% 0 / 20px 20px,
+      linear-gradient(-135deg, transparent calc(20px / 1.414), #00A7FA 0);
   }
   .rb_bevel{
     background:
-      linear-gradient(to left top, transparent 50%, #faad00 0) no-repeat 100% 100% / calc(20px * 1.414) calc(20px * 1.414),
-      linear-gradient(-45deg, transparent 20px, #00A7FA 0);
+      linear-gradient(to left top, transparent 50%, #faad00 0) no-repeat 100% 100% / 20px 20px,
+      linear-gradient(-45deg, transparent calc(20px / 1.414), #00A7FA 0);
   }
   .lb_bevel{
     background:
-      linear-gradient(to right top, transparent 50%, #faad00 0) no-repeat 0 100% / calc(20px * 1.414) calc(20px * 1.414),
-      linear-gradient(45deg, transparent 20px, #00A7FA 0);
+      linear-gradient(to right top, transparent 50%, #faad00 0) no-repeat 0 100% / 20px 20px,
+      linear-gradient(45deg, transparent calc(20px / 1.414), #00A7FA 0);
   }
 }
 </style>
