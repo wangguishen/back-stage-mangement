@@ -9,7 +9,7 @@ export default {
   name: 'my20191026',
   data () {
     return {
-
+      time: 1026
     }
   },
 
