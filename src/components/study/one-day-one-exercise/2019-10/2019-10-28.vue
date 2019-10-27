@@ -1,12 +1,12 @@
 <template>
   <div class="module flex">
-    2019-10-27
+    2019-10-28
   </div>
 </template>
 
 <script>
 export default {
-  name: 'my20191027',
+  name: 'my20191028',
   data () {
     return {
 
