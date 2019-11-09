@@ -122,9 +122,15 @@ export default {
       }
       let res = await CW000200(param)
       console.log('---', res)
-      this.titleList = res.data.data
+      let list = res.data.data
+      this.titleList = []
+      list.forEach(item => {
+        this.$set(item, 'date', `${item.year}-${item.month}-${item.day}`)
+        this.titleList.push(item)
+      });
     },
     async CW000201 () {
+      console.log('------', this.formData)
       let param = {
         date: ''
       };
