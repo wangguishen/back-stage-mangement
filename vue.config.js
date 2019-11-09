@@ -12,6 +12,8 @@ const name = 'dddddd' // page title
 // use administrator privileges to execute the command line.
 // For example, Mac: sudo npm run
 const port = 8384 // dev port
+const address = require('address');
+const host = address.ip();
 
 // All configuration item explanations can be find in https://cli.vuejs.org/config/
 module.exports = {
@@ -28,6 +30,7 @@ module.exports = {
   lintOnSave: process.env.NODE_ENV === 'development',
   productionSourceMap: false,
   devServer: {
+    host: host,
     port: port,
     open: true,
     overlay: {
