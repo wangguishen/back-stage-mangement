@@ -6,7 +6,6 @@
     <div v-else>
       <div class="module-title">{{ currentObj.title }}</div>
       <div :style="{height: (screenHeight - 60 - 32 - 60 - 50 - 60) + 'px'}">
-        <!-- <components :is="currentObj.routerName" /> -->
         <components :is="'my' + currentObj.year + currentObj.month + currentObj.day" />
       </div>
     </div>
@@ -16,9 +15,9 @@
 <script>
 import { mixins } from '@/mixins'
 const myContent = resolve => require(['@/components/study/one-day-one-exercise/content'], resolve)
-import component from '@/utils/component'
+import components from '@/utils/component'
 export default {
-  components: { ...component, myContent },
+  components: { ...components, myContent },
 
   mixins: [mixins],
 

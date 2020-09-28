@@ -2,10 +2,11 @@
 import { getSesStorage } from '@/utils/storageUtil.js'
 const studyList = getSesStorage('STUDY_LIST', 'json')
 
-let component = {}
+let components = {}
+console.log('studyList',studyList)
 studyList.forEach(item => {
   let routerName = `my${item.year}${item.month}${item.day}`
-  component[routerName] = () => import(`@/components/study/one-day-one-exercise/${item.year}-${item.month}/${item.year}-${item.month}-${item.day}`)
+  components[routerName] = resolve => require([`@/components/study/one-day-one-exercise/${item.year}-${item.month}/${item.year}-${item.month}-${item.day}.vue`], resolve)
 })
 
-export default component
+export default components

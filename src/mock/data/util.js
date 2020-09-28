@@ -34,6 +34,18 @@ const asideList = [
         path: '/study/mryl'
       })
     ]
+  }), Mock.mock({
+    id: Random.increment().toString(),
+    title: '订单',
+    icon: "el-icon-goods",
+    children: [
+      Mock.mock({
+        id: Random.increment().toString(),
+        title: '蓝牙耳机订单',
+        icon: "el-icon-service",
+        path: '/indent/bluetooth'
+      })
+    ]
   })
 ];
 

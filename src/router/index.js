@@ -31,6 +31,13 @@ const routes = [
         meta: {
           title: '每日一练'
         }
+      }, {
+        path: '/indent/bluetooth',
+        name: 'bluetooth',
+        component: () => import('@/views/indent/bluetooth.vue'),
+        meta: {
+          title: '蓝牙耳机订单'
+        }
       }
     ]
   },
