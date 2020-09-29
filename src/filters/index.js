@@ -64,7 +64,27 @@ const vFilter = {
       val = '0' + val
     }
     return val
-  }
+  },
+  vEjType: (val) => { // 耳机类型转化
+    if (!val) return '--'
+    return val === '0' ? '二代' : val === '1' ? '三代' : '--'
+  },
+  vPayment: (val, list) => { // 付款方式转化
+    if (!val) return '--'
+    return list.filter(item => item.value === val)[0].lable
+  },
+  vExpress: (val, list) => { // 快递公司转化
+    if (!val) return '--'
+    return list.filter(item => item.value === val)[0].lable
+  },
+  vCargoCase: (val) => { // 货物情况转化
+    if (!val) return '--'
+    return val === '0' ? '正常' : val === '1' ? '换货' : '退货'
+  },
+  vGift: (val) => { // 赠品转化
+    if (!val) return '--'
+    return val === '0' ? '无' : val === '1' ? '耳机壳' : val === '2' ? '手机壳' : '--'
+  },
 }
 
 export default vFilter

@@ -52,7 +52,7 @@ export default {
       const param = {}
       const res = await CW000001(param)
       this.menuList = res.data.data
-      console.log(res)
+      // console.log(res)
     },
     menuClick () {
 

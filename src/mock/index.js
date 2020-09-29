@@ -7,3 +7,4 @@
 import './fun/util.js'; // 公共接口类
 import './fun/live.js'; // 生活类
 import './fun/study/mryl.js'; // 每日一练
+import './fun/indent/bluetooth.js'; // 订单模块

@@ -175,6 +175,7 @@ export default {
 
 <style lang="scss">
   .zjls{
+    padding: 20px;
     .screen-from{
       .el-input{
         .el-select {

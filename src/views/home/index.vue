@@ -63,7 +63,7 @@ export default {
         rows: 1000
       }
       let res = await CW000200(param)
-      console.log('---res', res)
+      // console.log('---res', res)
       this.$store.dispatch('setStudyList', res.data.data)
     }
   }
@@ -84,9 +84,11 @@ export default {
       .page-box{
         width: 100%;
         height: 100%;
-        padding: 20px 0;
         background: #FFF;
         box-sizing: border-box;
+      }
+      .p20{
+        padding: 20px 0;
       }
     }
   }

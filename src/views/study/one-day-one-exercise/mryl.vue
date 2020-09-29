@@ -1,5 +1,5 @@
 <template>
-  <div class="page-box mryl">
+  <div class="page-box mryl p20">
     <el-row class="search-box">
       <el-col :span="24">
         <el-form ref="screenFrom" :inline="true" size="medium" :model="formData" class="screen-from toolbar">

@@ -7,6 +7,7 @@
  * eg: Format("yyyy-MM-dd hh:mm:ss.S")  -->  2019-09-02 09:36:10.400
  */
 export const Format = (date, fmt) => {
+  if (!date || date === '') return ''
   var o = {
     "M+": date.getMonth() + 1, // 月份
     "d+": date.getDate(), // 日

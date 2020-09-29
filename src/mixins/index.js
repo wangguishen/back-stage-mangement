@@ -18,7 +18,7 @@ window.addEventListener('resize', function () {
 export const mixins = {
   data () {
     return {
-
+      
     }
   },
   computed: {
