@@ -66,7 +66,7 @@
         <template slot-scope="scope">{{ scope.row.express | vExpress(EMSList) }}</template>
       </el-table-column>
       <el-table-column label="单号" prop="EMS" width="150">
-        <div class="erji-code" slot-scope="scope">{{ scope.row.EMS }}</div>
+        <div class="erji-code" slot-scope="scope" @click.stop="CW100001(scope.row)">{{ scope.row.EMS }}</div>
       </el-table-column>
       <el-table-column label="推荐人" prop="referrer" />
       <el-table-column label="赠品" prop="gift">
@@ -103,6 +103,7 @@
 import { mixins } from '@/mixins'
 import { Format } from "@/utils/date.js"
 import { CW000300, CW000301, CW000302 } from '@/service/mock/indent/bluetooth'
+import { CW100000, CW100001 } from '@/service/thirdparty'
 import myPagination from "@/components/pagination/my-pagination";
 export default {
   components: { myPagination },
@@ -164,17 +165,26 @@ export default {
   methods: {
     async init () {
       await this.CW000301()
+      // await this.CW100000()
       await this.CW000302()
       await this.searchClick()
     },
     addClick () { // 新增订单
     
     },
+    async CW100000 () {
+      let param = {
+        key: '5e311eba9d3644cc92216733d5461dad'
+      }
+      let res = await CW100000(param)
+      console.log('ressss', res)
+    },
     async CW000301 () { // 获取快递公司列表
       let res = await CW000301({})
       console.log('res', res)
       if (res.data.code === 0) {
         this.EMSList = res.data.data
+        console.log('this.EMSList', this.EMSList)
       }
     },
     async CW000302 () { // 获取付款方式
@@ -182,6 +192,7 @@ export default {
       console.log('res', res)
       if (res.data.code === 0) {
         this.paymentList = res.data.data
+        console.log('this.paymentList', this.paymentList)
       }
     },
     async searchClick () { // 查询订单
@@ -199,6 +210,15 @@ export default {
         this.erjiList = res.data.data.data
         this.pageObj.allTotal = res.data.data.allTotal
       }
+    },
+    async CW100001 (row) { // 查询快递
+      let param = {
+        company: row.express,
+        id: row.EMS
+      }
+      console.log('param', param)
+      let res = await CW100000(param)
+      console.log('查询快递', res)
     },
     pageChange (data) { // 每页条数切换回调事件
       this.pageObj.pageSize = data;

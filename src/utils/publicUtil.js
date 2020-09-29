@@ -12,3 +12,9 @@ export const formUtil = (obj) => {
   }
   return formData
 }
+
+/* 阿凡达key值加入 */
+export const aFanDa = (obj) => {
+  const key = '5e311eba9d3644cc92216733d5461dad'
+  return obj
+}

@@ -1,3 +1,6 @@
+import { expressCompany } from '../../../utils/expressCompany.js'
+console.log('expressCompany', expressCompany)
+
 /**
  * id          唯一标识
  * type        类型  -->  0 借款 1 还款
@@ -9,7 +12,6 @@
  * repay_date  还款日期
  * desc        原因
  */
-
 const bluetooth = [
   {
     "id": 1,
@@ -22,8 +24,8 @@ const bluetooth = [
     "netIncome": 118, // 纯收入
     "payment": '0', // 付款方式 0 淘宝 1 微信 2 支付宝 3 拼多多
     "freight": 5, // 运费
-    "express": '1', // 快递公司 1 韵达 2 顺丰 3 中通 4 圆通 5 申通
-    "EMS": '430000000000', // 快递单号
+    "express": 'YD', // 快递公司
+    "EMS": '4308852480713', // 快递单号
     "referrer": '李四', // 推荐人
     "cargoCase": '0', // 货物情况 0 正常  1  换货  2  退货
     "ordersDate": '2020-09-29', // 下单日期
@@ -36,24 +38,7 @@ const bluetooth = [
 /**
  * 快递公司详情
  */
-const expressList = [
-  {
-    lable: '韵达快递',
-    value: '1'
-  }, {
-    lable: '顺丰快递',
-    value: '2'
-  }, {
-    lable: '中通快递',
-    value: '3'
-  }, {
-    lable: '圆通快递',
-    value: '4'
-  }, {
-    lable: '申通快递',
-    value: '5'
-  }
-]
+const expressList = expressCompany
 
 /**
  * 付款方式
